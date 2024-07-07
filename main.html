@@ -78,7 +78,7 @@
     </div>
      <audio id="audio" src="meowbin.mp3" autoplay loop preload="auto"></audio>
 
-    <script>
+     <script>
         window.onload = function() {
             var loadingBar = document.getElementById('loadingBar');
             var loadingBarContainer = document.getElementById('loadingBarContainer');
@@ -103,18 +103,23 @@
                             document.body.style.animation = 'screen-flash 0.5s infinite';
                             finalMessage.style.display = 'block';
 
-                            // Show fake virus pop-ups after final message
-                            setTimeout(function() {
-                                for (let i = 0; i < 10; i++) {
-                                    setTimeout(function() {
-                                        alert('GG, you\'re my son');
-                                    }, i * 500);
-                                }
-                            }, 2000);
+                            // Show multiple pop-ups after final message
+                            for (let i = 0; i < 10; i++) {
+                                createPopup();
+                            }
                         }, 2000);
                     }, 2000);
                 }, 2000);
             }, 1000);
+
+            function createPopup() {
+                var popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.textContent = 'Sent to the webhook';
+                popup.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+                popup.style.left = Math.random() * (window.innerWidth - 200) + 'px';
+                document.body.appendChild(popup);
+            }
         };
     </script>
 </body>

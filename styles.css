@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Creepster', cursive;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: url('https://wallpaperaccess.com/full/424424.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    animation: flicker 3s infinite;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: red;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+p a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+p a:hover {
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+.trail {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    transition: transform 0.1s, opacity 0.1s;
+}

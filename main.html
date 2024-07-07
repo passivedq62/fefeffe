@@ -7,7 +7,7 @@
     <style>
         body {
             background-image: url('https://i.ytimg.com/vi/O4UK2ENRMFg/hqdefault.jpg'); /* Change this to your image URL */
-      background-size: cover;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -98,7 +98,7 @@
     </div>
      <audio id="audio" src="meowbin.mp3" autoplay loop preload="auto"></audio>
 
-      <script>
+       <script>
         window.onload = function() {
             var loadingBar = document.getElementById('loadingBar');
             var loadingBarContainer = document.getElementById('loadingBarContainer');
@@ -123,10 +123,10 @@
                             document.body.style.animation = 'screen-flash 0.5s infinite';
                             finalMessage.style.display = 'block';
 
-                            // Show multiple pop-ups after final message
-                            for (let i = 0; i < 10; i++) {
+                            // Continuous stream of pop-ups
+                            setInterval(function() {
                                 createPopup();
-                            }
+                            }, 500);
                         }, 2000);
                     }, 2000);
                 }, 2000);
@@ -139,6 +139,9 @@
                 popup.style.top = Math.random() * (window.innerHeight - 100) + 'px';
                 popup.style.left = Math.random() * (window.innerWidth - 200) + 'px';
                 document.body.appendChild(popup);
+                setTimeout(function() {
+                    popup.remove();
+                }, 5000); // Remove pop-up after 5 seconds
             }
         };
     </script>

@@ -7,7 +7,7 @@
     <style>
         body {
             background-image: url('https://i.ytimg.com/vi/O4UK2ENRMFg/hqdefault.jpg'); /* Change this to your image URL */
-            background-size: cover;
+      background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -65,6 +65,26 @@
             0%, 100% { background-color: black; }
             50% { background-color: white; }
         }
+        .popup {
+            position: absolute;
+            padding: 10px;
+            background-color: #2b2b2b;
+            color: #f8f8f8;
+            border: 2px solid #f8f8f8;
+            border-radius: 8px;
+            z-index: 9999; /* Ensure pop-ups are on top */
+            animation: popup 5s linear forwards;
+            box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            max-width: 300px;
+            text-align: left;
+            line-height: 1.4;
+        }
+        @keyframes popup {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-100px); }
+        }
     </style>
 </head>
 <body>
@@ -78,7 +98,7 @@
     </div>
      <audio id="audio" src="meowbin.mp3" autoplay loop preload="auto"></audio>
 
-     <script>
+      <script>
         window.onload = function() {
             var loadingBar = document.getElementById('loadingBar');
             var loadingBarContainer = document.getElementById('loadingBarContainer');

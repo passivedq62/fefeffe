@@ -1,44 +1,86 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const trail = [];
-    const trailLength = 20;
+// Snowflake Animation
+const canvas = document.getElementById('snow');
+const ctx = canvas.getContext('2d');
 
-    function getRandomColor() {
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        return `rgb(${r},${g},${b})`;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function random(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+class Snowflake {
+    constructor() {
+        this.x = random(0, canvas.width);
+        this.y = random(-10, -canvas.height);
+        this.size = random(2, 4);
+        this.speed = random(1, 3);
+        this.opacity = random(0.5, 1);
     }
 
-    for (let i = 0; i < trailLength; i++) {
-        const div = document.createElement('div');
-        div.classList.add('trail');
-        div.style.backgroundColor = getRandomColor();
-        document.body.appendChild(div);
-        trail.push(div);
+    update() {
+        this.y += this.speed;
+        if (this.y > canvas.height) {
+            this.x = random(0, canvas.width);
+            this.y = random(-10, -canvas.height);
+        }
     }
 
-    let mouseX = -100;
-    let mouseY = -100;
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.fill();
+    }
+}
 
-    document.addEventListener('mousemove', (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
+const snowflakes = [];
+
+function createSnowflakes() {
+    for (let i = 0; i < 50; i++) {
+        snowflakes.push(new Snowflake());
+    }
+}
+
+function animateSnowflakes() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    snowflakes.forEach(snowflake => {
+        snowflake.update();
+        snowflake.draw();
     });
+    requestAnimationFrame(animateSnowflakes);
+}
 
-    function animateTrail() {
-        let x = mouseX;
-        let y = mouseY;
+createSnowflakes();
+animateSnowflakes();
 
-        trail.forEach((div, index) => {
-            setTimeout(() => {
-                div.style.left = `${x}px`;
-                div.style.top = `${y}px`;
-                div.style.opacity = (trailLength - index) / trailLength;
-            }, index * 30);
-        });
+// Snowflake Mouse Trail
+const snowflakeTrail = document.querySelector('.snowflake-trail');
 
-        requestAnimationFrame(animateTrail);
-    }
+document.addEventListener('mousemove', (event) => {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.style.left = `${event.pageX}px`;
+    snowflake.style.top = `${event.pageY}px`;
+    snowflake.style.animationDuration = `${random(1, 3)}s`;
+    snowflake.style.animationDelay = `${random(0, 1)}s`;
+    snowflakeTrail.appendChild(snowflake);
 
-    animateTrail();
+    setTimeout(() => {
+        snowflake.remove();
+    }, 3000); // Remove snowflake after 3 seconds
 });
+
+// Visitor Count
+let count = localStorage.getItem('visitorCount');
+
+if (count === null) {
+    count = 0;
+} else {
+    count = parseInt(count);
+}
+
+document.getElementById('visitor-count').textContent = count;
+
+count++;
+localStorage.setItem('visitorCount', count.toString());

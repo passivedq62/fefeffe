@@ -3,147 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundtak.ing</title>
-    <style>
-        body {
-            background-image: url('https://i.ytimg.com/vi/O4UK2ENRMFg/hqdefault.jpg'); /* Change this to your image URL */
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        .content {
-            text-align: center;
-        }
-        .flashing-text {
-            font-size: 3em;
-            animation: flash 1s infinite;
-        }
-        @keyframes flash {
-            0%, 100% { color: red; }
-            50% { color: yellow; }
-        }
-        .loading-bar-container {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 400px;
-            background-color: #444;
-            border-radius: 25px;
-            overflow: hidden;
-        }
-        .loading-bar {
-            width: 0;
-            height: 30px;
-            background-color: #0f0;
-            border-radius: 25px;
-            transition: width 2s;
-        }
-        .message {
-            margin-top: 20px;
-            font-size: 1.5em;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        .flashing-message {
-            animation: flash-black 1s infinite;
-        }
-        @keyframes flash-black {
-            0%, 100% { color: black; }
-            50% { color: white; }
-        }
-        .final-message {
-            display: none;
-            font-size: 2em;
-            color: yellow;
-        }
-        @keyframes screen-flash {
-            0%, 100% { background-color: black; }
-            50% { background-color: white; }
-        }
-        .popup {
-            position: absolute;
-            padding: 10px;
-            background-color: #2b2b2b;
-            color: #f8f8f8;
-            border: 2px solid #f8f8f8;
-            border-radius: 8px;
-            z-index: 9999; /* Ensure pop-ups are on top */
-            animation: popup 5s linear forwards;
-            box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7);
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-            max-width: 300px;
-            text-align: left;
-            line-height: 1.4;
-        }
-        @keyframes popup {
-            0% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-100px); }
-        }
-    </style>
+    <title>kl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-EVSTQN3/2bW6Zk6gZU4sZD7LfykZnw3GGSEOCsqPw5bh0uZ9rmZiEhxC4JwvJmCi" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="content">
-        <div class="flashing-text">UR POOR</div>
-        <div class="loading-bar-container" id="loadingBarContainer">
-            <div class="loading-bar" id="loadingBar"></div>
+     <video id="background-video" autoplay loop muted playsinline>
+        <source src="kl.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+     <audio id="background-audio" autoplay loop>
+        <source src="kl.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    <div class="container">
+        <div class="profile">
+            <img src="kl.gif" alt="Profile Picture">
         </div>
-        <div class="message flashing-message" id="message">Sending to webhook...</div>
-        <div class="final-message" id="finalMessage">GG, you fell for it</div>
+        <div class="content">
+            <h1>kl</h1>
+            <p>@btcbandser</p>
+            <div class="eye">
+                <img src="eye.png" alt="Eye Icon">
+                <span id="visitor-count">0</span>
+            </div>
+        </div>
     </div>
-     <audio id="audio" src="meowbin.mp3" autoplay loop preload="auto"></audio>
-
-       <script>
-        window.onload = function() {
-            var loadingBar = document.getElementById('loadingBar');
-            var loadingBarContainer = document.getElementById('loadingBarContainer');
-            var message = document.getElementById('message');
-            var finalMessage = document.getElementById('finalMessage');
-
-            // Show "Sending to webhook" message after 1 second
-            setTimeout(function() {
-                message.style.opacity = 1;
-
-                // Complete loading bar after "Sending to webhook" message is shown
-                setTimeout(function() {
-                    loadingBar.style.width = '100%';
-
-                    // Remove loading bar and show "Sent to webhook" message
-                    setTimeout(function() {
-                        loadingBarContainer.style.display = 'none';
-                        message.textContent = 'Sent to webhook';
-
-                        // Show final message after "Sent to webhook" message
-                        setTimeout(function() {
-                            document.body.style.animation = 'screen-flash 0.5s infinite';
-                            finalMessage.style.display = 'block';
-
-                            // Continuous stream of pop-ups
-                            setInterval(function() {
-                                createPopup();
-                            }, 500);
-                        }, 2000);
-                    }, 2000);
-                }, 2000);
-            }, 1000);
-
-            function createPopup() {
-                var popup = document.createElement('div');
-                popup.className = 'popup';
-                popup.textContent = 'Sent to the webhook';
-                popup.style.top = Math.random() * (window.innerHeight - 100) + 'px';
-                popup.style.left = Math.random() * (window.innerWidth - 200) + 'px';
-                document.body.appendChild(popup);
-                setTimeout(function() {
-                    popup.remove();
-                }, 5000); // Remove pop-up after 5 seconds
-            }
-        };
-    </script>
+    <canvas id="snow"></canvas> <!-- Canvas for falling snowflakes -->
+    <script src="script.js"></script>
 </body>
 </html>

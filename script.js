@@ -35,10 +35,10 @@ function createFallingSnowflake() {
     }, 10000); // Remove the snowflake after 10 seconds
 }
 
-setInterval(createFallingSnowflake, 200); // Create a falling snowflake every 200ms
+setInterval(createFallingSnowflake, 200); 
 
 function goToNextPage() {
-    window.location.href = 'kl/main.html'; // Replace with the URL of the next page
+    window.location.href = 'kl/main.html'; 
 }
 
 document.addEventListener('click', () => {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-EVSTQN3/2bW6Zk6gZU4sZD7LfykZnw3GGSEOCsqPw5bh0uZ9rmZiEhxC4JwvJmCi" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <video id="background-video" autoplay loop muted playsinline>
+        <source src="kl.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+     <audio id="background-audio" autoplay loop>
+        <source src="kl.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    <div class="container">
+        <div class="profile">
+            <img src="kl.gif" alt="Profile Picture">
+        </div>
+        <div class="content">
+            <h1>kl</h1>
+            <p>@btcbandser</p>
+            <div class="eye">
+                <img src="eye.png" alt="Eye Icon">
+                <span id="visitor-count">0</span>
+            </div>
+        </div>
+    </div>
+    <canvas id="snow"></canvas> <!-- Canvas for falling snowflakes -->
+    <script src="script.js"></script>
+</body>
+</html>

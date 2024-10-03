@@ -1,6 +1,6 @@
 function startTyping() {
   const output = document.getElementById('cmd-output');
-  const welcomeMessage = 'Welcome to cuk.lol\n';
+  const welcomeMessage = 'Welcome to fundtak.ing\n';
   
   let index = 0;
 

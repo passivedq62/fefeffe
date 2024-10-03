@@ -1,4 +1,3 @@
-/* CSS for Windows CMD Simulation */
 body {
     background-color: #000;
     color: #cf0700;
@@ -9,60 +8,57 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  
-  .cmd-container {
+}
+
+.cmd-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 80%;
-  }
-  
-  #cmd-screen {
+}
+
+#cmd-screen {
     position: relative;
     width: 100%;
     height: 50vh;
     background-color: #000;
-    border: 2px solid #00ff00;
+    border: 2px solid #ff0000;
     padding: 20px;
     overflow-y: auto;
     box-sizing: border-box;
-  }
-  
-  /* ASCII art background */
-  .ascii-art {
+}
+
+.ascii-art {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    color: rgba(0, 255, 0, 0.1); /* Faint ASCII art in the background */
-    font-size: 20px; /* Adjust font size to make ASCII larger/smaller */
+    color: rgba(255, 0, 0, 0.1);
+    font-size: 20px;
     line-height: 1.2;
-    white-space: pre; /* Preserve the spaces */
+    white-space: pre;
     z-index: 1;
-    pointer-events: none; /* Ensure it doesn’t interfere with text */
-  }
-  
-  /* Main content (typing effect) */
-  #cmd-output {
+    pointer-events: none;
+}
+
+#cmd-output {
     position: relative;
-    z-index: 2; /* Ensure it stays above the ASCII art */
+    z-index: 2;
     white-space: pre-wrap;
-  }
-  
-  #start-btn {
+}
+
+#start-btn {
     margin-top: 20px;
-    background-color: #00ff00;
+    background-color: #ff0000;
     border: none;
-    color: #000;
+    color: #ffffff;
     font-size: 16px;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  #start-btn:hover {
-    background-color: #007700;
-  }
-  
+}
+
+#start-btn:hover {
+    background-color: #ff0000;
+}

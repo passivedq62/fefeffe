@@ -1,93 +1,104 @@
 
-* {
+@font-face {
+    font-family: 'VCROSDMono';
+    src: url('zpix\ \(1\).ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%; 
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: #000;
-    background-image: url('https://images6.alphacoders.com/874/874542.jpg'); 
-    background-size: cover;
-    background-position: center;
+    background-color: #0a0a0a;
     color: #fff;
-    font-family: 'Creepster', cursive;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
+    font-family: 'VCROSDMono', monospace;
+    text-align: center;
+    background-image: url('https://wallpapercave.com/wp/wp5429541.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
-
-
-.logo-container {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #00000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #000000; 
-}
-
-.logo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 .container {
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.title {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.admin {
     text-align: center;
-    z-index: 1;
 }
 
-h1 {
-    font-size: 6rem;
-    margin-bottom: 20px;
-    color: #ffa500; 
-    text-shadow: 5px 5px 0 #ff0000;
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    filter: grayscale(100%);
 }
 
-p {
-    font-size: 2rem;
-    color: #000000;
+.name {
+    font-size: 24px;
+    margin-top: 10px;
+    color: red;
 }
 
-
-.bats {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
+.role {
+    font-size: 18px;
+    color: #fff;
 }
 
-.bat {
-    position: absolute;
+.socials {
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.socials-icon {
     width: 50px;
-    height: 30px;
-    background: url('https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png') no-repeat center/contain;
-    top: 100px;
-    animation: fly 8s linear infinite;
+    margin-top: 10px;
 }
 
-@keyframes fly {
+.domains {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.domains a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+.pgp {
+    margin-top: 30px;
+    font-size: 14px;
+    color: lightgreen;
+}
+
+
+@keyframes flicker {
     0% {
-        transform: translate(-100px, 0) scale(0.5);
+        opacity: 1;
     }
     50% {
-        transform: translate(100vw, 50vh) scale(1);
+        opacity: 0.8;
     }
     100% {
-        transform: translate(-100px, -100vh) scale(0.5);
+        opacity: 1;
     }
 }

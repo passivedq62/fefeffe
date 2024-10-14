@@ -1,0 +1,35 @@
+Email Stuff
+
+Basic OSINT Access~ $40
+Top tier + current people lookups for tons of major countries (USA, Canada, UK, Australia, Russia, ETC.)
+#1 World wide number lookups to get the name on the number, carrier, and ALL socials connected
+VIN + Plate Lookups (USA)
+Discord ID 2 IP (Restorecord + Private DBs)
+Github 2 Email
+
+Email OSINT Access ~ $40
+Website Checker (tells what sites the email is signed up to) / !email
+Social Checker (links connected social medias, VERY advanced) / !emailv2
+Email Data / !emailv3
+Leak Checker (Snusbase lookup)
+Discord ID 2 IP (Restorecord + Private DBs)
+Github 2 Email
+-------------------------------------------
+Search Engines
+IntelX
+1 Week ~ $55
+1 Month ~ $110
+Lifetime ~ $160
+-------------------------------------------
+Record Lookups
+TLO Whitelist ~ $110
+TLOs With Whitelist ~ $25 Per
+TLOs Without Whitelist ~ $35 Per
+^whitelist is cheaper or ur paying me to do the tlo for u
+-------------------------------------------
+Scripts
+SE Script + OPSEC Guide ~ $10
+It's an SE (Social Engineering) Script to be Able to Manipulate People to Give You Viable Data to Dox Them + A OPSEC Guide to Teach You How to Prevent Yourself From Being Found Online VIA Malicious Intent.
+-------------------------------------------
+Discord
+Discord Osint bot~$8 higher price better bot u get

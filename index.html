@@ -3,47 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundsec</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+    <title>Kali Linux Themed Profile Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('fonts/YourCustomFont.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'CustomFontBold';
+            src: url('font.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'CustomFont', monospace;
+            background: url('https://wallpapercat.com/w/full/5/4/4/2117815-3840x2160-desktop-4k-dark-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #c9d1d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            cursor: url('http://www.rw-designer.com/cursor-extern.php?id=11276'), auto;
+        }
+
+        .terminal {
+            background-color: #000000;
+            border: 2px solid #3a3f44;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            font-family: 'CustomFontBold', monospace;
+            font-size: 1.2em;
+            color: #ff0a0a;
+            margin-bottom: 20px;
+        }
+
+        .profiles {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ff0000;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+            border-color: #0a84ff;
+        }
+
+        .profile-name {
+            font-family: 'CustomFontBold', monospace;
+            font-size: 1.2em;
+            color: #ff4242;
+            font-weight: bold;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: transform 0.2s;
+        }
+
+        .social-button:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            color: #ff0000;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        .trail {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.7);
+            pointer-events: none;
+            transition: opacity 0.5s, transform 0.3s;
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background: rgba(255, 0, 0, 0.7);
+            border-radius: 5px;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Fundsec</h1>
-        
-        <div class="profile">
-            <div class="admin">
-                <img src="comp.png" alt="kl Image" class="profile-pic">
-                <h2 class="name">ltcegirl</h2>
-                <p class="role">Admin @ Fundsec</p>
-            </div>
+    <audio autoplay loop muted>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-            <div class="admin">
-                <img src="white.png" alt="* Image" class="profile-pic">
-                <h2 class="name">*</h2>
-                <p class="role">Admin @ Fundsec</p>
+    <div class="terminal">
+        <header class="terminal-header">
+            <span class="terminal-title">nervesec:~$</span>
+        </header>
+        <div class="profiles">
+            <div class="profile">
+                <img src="kl.png" alt="Profile 1" class="profile-img">
+                <div class="profile-name">kl</div>
+                <div class="social-buttons">
+                    <a href="https://t.me/charonkl" target="_blank" class="social-button">
+                        <img src="https://img.icons8.com/material-outlined/24/ffffff/telegram-app.png" alt="Telegram" />
+                    </a>
+                    <a href="https://discord.gg/nmap" target="_blank" class="social-button">
+                        <img src="https://img.icons8.com/material-outlined/24/ffffff/discord.png" alt="Discord" />
+                    </a>
+                </div>
             </div>
-
-            <div class="admin">
-                <img src="kc.png" alt="kl Image" class="profile-pic">
-                <h2 class="name">kc</h2>
-                <p class="role">Admin @ Fundsec</p>
+            <div class="profile">
+                <img src="vent.png" alt="Profile 2" class="profile-img">
+                <div class="profile-name">vent</div>
+                <div class="social-buttons">
+                    <a href="https://t.me/netcurl" target="_blank" class="social-button">
+                        <img src="https://img.icons8.com/material-outlined/24/ffffff/telegram-app.png" alt="Telegram" />
+                    </a>
+                    <a href="https://discord.gg/nmap" target="_blank" class="social-button">
+                        <img src="https://img.icons8.com/material-outlined/24/ffffff/discord.png" alt="Discord" />
+                    </a>
+                </div>
             </div>
         </div>
-
-        <!-- Moved Socials and Domains Sections here -->
-        <div class="socials">
-            <p>--Socials--</p>
-            <a href="service.txt" target="_blank">
-                <img src="osint.png" alt="Socials Icon" class="socials-icon">
-            </a>
-        </div>
-
-        <div class="domains">
-            <p>The current active domains are: <br>
-                <a href="http://fundtak.ing">fundtak.ing</a> | <a href="http://priver.info">priver.info</a>
-            </p>
+        <div class="footer">
+            <span>Reckless Terminal Warriors </span>
         </div>
     </div>
+
+    <script>
+        function createRaindrop() {
+            const raindrop = document.createElement("div");
+            raindrop.classList.add("raindrop");
+            document.body.appendChild(raindrop);
+            raindrop.style.left = Math.random() * window.innerWidth + 'px';
+            raindrop.style.top = '0px';
+            const fallDuration = Math.random() * 2 + 2;
+            raindrop.animate([
+                { transform: 'translateY(0)' },
+                { transform: 'translateY(' + window.innerHeight + 'px)' }
+            ], {
+                duration: fallDuration * 1000,
+                easing: 'linear',
+                fill: 'forwards'
+            });
+            setTimeout(() => {
+                document.body.removeChild(raindrop);
+            }, fallDuration * 1000);
+        }
+
+        setInterval(createRaindrop, 100);
+
+        document.addEventListener("mousemove", (e) => {
+            const { clientX: x, clientY: y } = e;
+            const trail = document.createElement("div");
+            trail.classList.add("trail");
+            trail.style.left = `${x}px`;
+            trail.style.top = `${y}px`;
+            document.body.appendChild(trail);
+            setTimeout(() => {
+                trail.style.opacity = 0;
+            }, 100);
+            setTimeout(() => {
+                document.body.removeChild(trail);
+            }, 300);
+        });
+    </script>
 </body>
 </html>
